@@ -1,28 +1,103 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Lord of the Rings RPG</title>
+		<title>Crystal Collector</title>
 			<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 		 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   			<script src="https://code.jquery.com/jquery.js"></script>
+  			<script src="assets/javascript/game.js"></script>
 	</head>
 	<body>
-		<h1>Lord of the Rings RPG</h1>
-			<div id="yourCharacter">
-				<p>Your Character</p>
+		<h1>Crystal Collector!</h1>
+			<div id="directions">
+				<p>You will be given a random number at the start of the game.</p>
+				<p>There are also four crystals below. By clicking on one of them, you will add a specific amount of points to your total score.</p>
+				<p>Win the game by matching your total score with the random number you were given at the start of the game!</p>
+				<p>Don't forget...the amount of points that each crystal gives you is hidden from you until you click it...All values change with each game!</p>
 			</div>
-			<div id="enemiesAvailable">
-				<p>Enemies Available to Fight</p>
+			<div id="randomPointTotal">
+				<p>Computer Score: <span class="computerPoints">0</span></p>
 			</div>
-			<div id="fightSection">
-				<p>Fight Section</p>
+			<div id="winsLosses">
+				<p>Wins: <span class="wins">0</span></p>
+				<p>Losses: <span class="losses">0</span></p>
 			</div>
-			<div>
-				<button id="attachButton">Attack</button>
+			<div id="crystals">
+				<img class="gem1" src="assets/images/purplegem.png">
+				<img class="gem2" src="assets/images/redgem.png">
+				<img class="gem3" src="assets/images/bluegem.png">
+				<img class="gem4" src="assets/images/greengem.png">
 			</div>
-			<div>
-				<p>Defender</p>
+			<div id="userScore">
+				<p>Your total score is: </p>
+				<p><span class="playerScore">0</span></p>
 			</div>
-	</body>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var wins = 0;
+				var losses = 0;
+				var computerPoints = (Math.floor(Math.random()*101))+19;
+				var playerScore = 0;
+				var gem1 = (Math.floor(Math.random()*10)+2);
+				var gem2 = (Math.floor(Math.random()*10)+2);
+				var gem3 = (Math.floor(Math.random()*10)+2);
+				var gem4 = (Math.floor(Math.random()*10)+2);
+
+				var resetGame = function() {
+					computerPoints = (Math.floor(Math.random()*101))+19;
+					playerScore = 0;
+					gem1 = (Math.floor(Math.random()*10)+2);
+					gem2 = (Math.floor(Math.random()*10)+2);
+					gem3 = (Math.floor(Math.random()*10)+2);
+					gem4 = (Math.floor(Math.random()*10)+2);
+					$('.playerScore').text(playerScore);
+					$('.computerPoints').text(computerPoints);
+				}
+								
+				var scoreCheck = function() {
+						if (playerScore === computerPoints) {
+							alert("You win! Play another round!")
+							wins++;
+							$(".wins").text(wins);
+							resetGame();
+						} else if (playerScore>computerPoints) {
+							alert("You lose! Try again.");
+							losses++;
+							$(".losses").text(losses);
+							resetGame();
+						}
+
+				}
+
+				$('.computerPoints').text(computerPoints);
+
+				$('.gem1').on('click', function() {
+					playerScore+=gem1;
+					$('.playerScore').text(playerScore);
+					scoreCheck();
+				});
+
+				$('.gem2').on('click', function() {
+					playerScore+=gem2;
+					$('.playerScore').text(playerScore);
+					scoreCheck();
+				});
+
+				$('.gem3').on('click', function() {
+					playerScore+=gem3;
+					$('.playerScore').text(playerScore);
+					scoreCheck();
+				});
+
+				$('.gem4').on('click', function() {
+					playerScore+=gem4;
+					$('.playerScore').text(playerScore);
+					scoreCheck();
+				});
+
+			})
+		</script>
+	</b+2ody>
 </html>
