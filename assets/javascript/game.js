@@ -1,20 +1,20 @@
 var runGame = function() {
 				var wins = 0;
 				var losses = 0;
-				var computerPoints = (Math.floor(Math.random()*101))+19;
+				var computerPoints = (Math.floor(Math.random()*101))+20;
 				var playerScore = 0;
-				var gem1 = (Math.floor(Math.random()*11)+2);
-				var gem2 = (Math.floor(Math.random()*11)+2);
-				var gem3 = (Math.floor(Math.random()*11)+2);
-				var gem4 = (Math.floor(Math.random()*11)+2);
+				var gem1 = (Math.floor(Math.random()*11+2));
+				var gem2 = (Math.floor(Math.random()*11+2));
+				var gem3 = (Math.floor(Math.random()*11+2));
+				var gem4 = (Math.floor(Math.random()*11+2));
 
 				var resetGame = function() {
 					computerPoints = (Math.floor(Math.random()*101))+19;
 					playerScore = 0;
-					gem1 = (Math.floor(Math.random()*11)+2);
-					gem2 = (Math.floor(Math.random()*11)+2);
-					gem3 = (Math.floor(Math.random()*11)+2);
-					gem4 = (Math.floor(Math.random()*11)+2);
+					gem1 = (Math.floor(Math.random()*11+2));
+					gem2 = (Math.floor(Math.random()*11+2));
+					gem3 = (Math.floor(Math.random()*11+2));
+					gem4 = (Math.floor(Math.random()*11+2));
 					$('.playerScore').text(playerScore);
 					$('.computerPoints').text(computerPoints);
 				};
