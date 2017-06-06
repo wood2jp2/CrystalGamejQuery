@@ -5,7 +5,7 @@
 			<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 		 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-		 	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Kaushan+Script|Tangerine" rel="stylesheet">
+		 	<link href="https://fonts.googleapis.com/css?family=Euphoria+Script|Sofia" rel="stylesheet">
   			<script src="https://code.jquery.com/jquery.js"></script>
   			<script src="assets/javascript/game.js"></script>
 	</head>
@@ -15,32 +15,28 @@
 			<p>Do you have what it takes to defeat the dragon and steal his riches?</p>
 		</div>
 			<div id="directions" class="row">
-				<div class="col-lg-6 directions">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-4 directions">
 					<p>You will be given a random number at the start of the game.</p>
-					<p>There are also four weapons given; sword, shield, magic, and bow. By clicking on one of them, you will add a specific amount of attack points to your total score.</p>
+					<p>There are also four weapons given; sword, shield, magic, and bow. By clicking on one of them, you will reveal the weapons' attack value, and add that specific amount of attack points to your total score.</p>
 					<p>Face the dragon, win the game, and steal its' riches by matching your total score with the random number you were given at the start of the game!</p>
 					<p>Don't forget...the amount of points that each attack choice gives you is hidden from you until you click it...Which attacks are effective now may not be as effective next game!</p>
 				</div>
+				<div class="col-lg-1"></div>
 				<div class="col-lg-6">
 					<img class="gem1" src="assets/images/sword.jpg">
-					<img class="gem2" src="assets/images/shield.png">
-					<img class="gem3" src="assets/images/spell.jpg">
+					<img class="gem2" src="assets/images/shield.png">	
+					<img class="gem3" src="assets/images/spell.jpg">	
 					<img class="gem4" src="assets/images/ba.png">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-6"></div>
-				<div id="winsLosses" class="col-lg-3">
 					<p>Wins: <span class="wins">0</span></p>
 					<p>Losses: <span class="losses">0</span></p>
-				</div>
-				<div id="randomPointTotal">
 					<p>Dragon's Score: <span class="computerPoints">0</span></p>
-				</div>
-				<div id="userScore">
 					<p>Warrior's Score: <span class="playerScore">0</span></p>
+					<p>Swords: <span id="gem1value">?</span></p><p>Shield: <span id="gem2value">?</span></p><p>Magic: <span id="gem3value">?</span></p><p>Bow and Arrow: <span id="gem4value">?</span></p>	
+
 				</div>
 			</div>
+
 		<script type="text/javascript">
 			$(document).ready(function() {
 				runGame();
